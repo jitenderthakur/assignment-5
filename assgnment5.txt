@@ -1,0 +1,155 @@
+QUES: OVERLOAD PRINT FUNCTION
+ANS
+
+package acadviewdemo3;
+public class Test
+{
+    public void fun(Integer i)
+    {
+        System.out.println("Hello World ");
+    }
+    public void fun(String name)
+    {
+        System.out.println("Bye World ");
+    }
+ 
+    public static void main(String [] args)
+    {
+        Test obj = new Test();
+       String a = null;
+	String b=null;
+        obj.fun(a);
+	obj.fun(b);
+    }
+}
+
+QUES: LONGEST SUBARRAY
+ANS
+
+
+package acadviewdemo3;
+
+import java.util.*;
+ 
+class GFG {
+     
+ 
+    public static void printLogestIncSubArr(int arr[],int n)
+    {
+        
+        int max = 1, len = 1, maxIndex = 0;
+          
+        for (int i = 1; i < n; i++)
+        {
+         
+            if (arr[i] > arr[i-1])
+                len++;
+            else
+            {
+                if (max < len)    
+                {
+                    max = len;
+                       
+                    maxIndex = i - max;
+                }
+                         
+                len = 1;    
+            }    
+        }
+          
+        if (max < len)
+        { 
+            max = len;
+            maxIndex = n - max;
+        }
+      
+        for (int i = maxIndex; i < max+maxIndex; i++)
+            System.out.print(arr[i] + " ");
+    }
+     
+    public static void main(String[] args) 
+    {
+        int arr[] = {5, 6, 3, 5, 7, 8, 9, 1, 2};
+        int n = arr.length;
+        printLogestIncSubArr(arr, n);
+         
+    }
+}
+QUES: SPEAK FUNCTION FOR CLASS
+ANS
+
+package acadviewdemo2;
+
+public class Acadviewdemo2 {
+
+    
+    public static void main(String[] args) {
+       Animal animal=new Animal();
+       animal.speak();
+       Cat cat=new Cat();
+       cat.speak();
+       Dog dog=new Dog();
+       dog.speak();
+    }
+    
+}
+
+package acadviewdemo2;
+
+ public class Animal {
+      String bread;
+    String  colour;
+    
+    public void speak ()
+    {
+        System.out.println("i m animal");
+        
+    }
+}
+
+package acadviewdemo2;
+
+ class Cat extends Animal
+{  String bread= "xyz";
+    String colour="white";
+    
+    public void speak ()
+    {
+        System.out.println("i m cat");
+        
+    }
+     
+    
+}
+
+package acadviewdemo2;
+ class Dog extends Animal 
+ {
+     String bread= "husky";
+    String colour="grey";
+    
+    public void speak ()
+    {
+        System.out.println("i m dog");
+        
+    }
+    
+}
+ QUES: STATIC BLOCK
+ANS
+
+package acadviewdemo3;
+class Staticvoid 
+{
+    static String s="";
+    static
+    {
+   s="3";
+        
+    }
+    public static void main(String args [])
+    {
+            System.out.println("the value of s :"+ s);
+    }
+}
+
